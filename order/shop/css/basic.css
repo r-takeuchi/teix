@@ -1,0 +1,117 @@
+* {
+	margin:0;
+}
+header {
+	background-color: #E73812;
+	height: 3em;
+	color: #FFF;
+}
+menu {
+	background-color: #E73812;
+	margin: 0px;
+	padding: 1.2em;
+	text-align: center;
+}
+body {
+	background-color: #F6F6E9;
+	font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+}
+th {
+	background-color: #E73812;
+	border-bottom:3px solid #E73812;
+	padding: 0.2em 1em;
+	color: #FFF;
+}
+td {
+	background-color: #FFF;
+	padding: 0.2em 1em;
+	line-height: 1.2em;
+}
+td img {
+	width: 50px;
+}
+
+ul {
+	list-style: none;
+	padding: 0px;
+}
+li {
+	text-decoration: none;
+	display: inline-block;
+	width: 19%;
+}
+menu li a {
+	display: block;
+	background-color: #F6F6E9;
+	text-decoration: none;
+	color: #E73812;
+	font-weight: bold;
+	width: 100%;
+	padding:0.8em 0;
+}
+li a:hover {
+	background-color: #FFF;
+}
+header li {
+	padding: 0.8em;
+	width: auto;
+}
+header li a {
+	color: #FFF;
+}
+
+.alert {
+	color:#F13615;
+}
+.main_table {
+	width: 100%;
+}
+.content,menu ul {
+	max-width: 1020px;
+	margin: 0px auto;	
+}
+label {
+	display: block;
+	margin-top: 1em;
+	margin-bottom: 0.2em;
+}
+@media screen and (min-width:480px) { 
+    .content {
+    	width: 95%;
+    }
+    menu ul {
+    	width: 100%;	
+    }
+}
+@media screen and (min-width:768px) and ( max-width:1024px) {
+    .content {
+    	width: 95%;
+    }
+	menu ul {
+    	width: 100%;	
+    }    
+}
+.longtext {
+	display: none;
+}
+.showlongtext {
+	font-weight: bold;
+	color:orange;
+	cursor: pointer;
+}
+.menu_eg {
+    font-size: 0.8em;
+}
+button {
+	font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+	font-weight: bold;
+}
+.Number {
+	text-align: right;
+}
+input[type='text'],input[type='number'] {
+	padding: 5px;
+}
+input[type='number'] {
+	text-align: right;
+}

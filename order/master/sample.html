@@ -1,0 +1,54 @@
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <link rel="stylesheet" href="js/cropper-master/dist/cropper.css" charset="UTF-8">
+
+        <title>Cropper Sample</title>
+    </head>
+    <body>
+<form method="POST" enctype="multipart/form-data">
+    <input type="file" id="profile-image" />
+
+    <img id="select-image" style="max-width:500px;">
+
+　　　　<!-- 切り抜き範囲をhiddenで保持する -->
+    <input type="hidden" id="upload-image-x" name="profileImageX" value="0"/>
+    <input type="hidden" id="upload-image-y" name="profileImageY" value="0"/>
+    <input type="hidden" id="upload-image-w" name="profileImageW" value="0"/>
+    <input type="hidden" id="upload-image-h" name="profileImageH" value="0"/>
+    <input type="submit" value="アップロード">
+</form>
+    </body>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/cropper-master/dist/cropper.js" charset="UTF-8"></script>
+<script type="text/javascript">
+$(function(){
+        // 初期設定
+    var options =
+    {
+        aspectRatio: 1 / 1,
+        viewMode:1,
+        crop: function(e) {
+                cropData = $('#select-image').cropper("getData");
+                $("#upload-image-x").val(Math.floor(cropData.x));
+                $("#upload-image-y").val(Math.floor(cropData.y));
+                $("#upload-image-w").val(Math.floor(cropData.width));
+                $("#upload-image-h").val(Math.floor(cropData.height));
+        },
+        zoomable:false,
+        minCropBoxWidth:162,
+        minCropBoxHeight:162
+    }
+
+        // 初期設定をセットする
+    $('#select-image').cropper(options);
+
+    $("#profile-image").change(function(){
+                // ファイル選択変更時に、選択した画像をCropperに設定する
+        $('#select-image').cropper('replace', URL.createObjectURL(this.files[0]));
+    });
+});
+</script>    
+</html>
